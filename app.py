@@ -89,7 +89,7 @@ st.markdown("---")
 # =========================
 # LOAD DATA
 # =========================
-df = pd.read_csv("merged_data.csv")
+df = pd.read_csv("merged_df.csv")
 
 df['TIMESTAMP'] = pd.to_datetime(df['TIMESTAMP'])
 df = df.sort_values('TIMESTAMP')
