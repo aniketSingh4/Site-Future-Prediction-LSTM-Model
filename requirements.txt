@@ -1,0 +1,41 @@
+streamlit
+pandas
+numpy
+joblib
+tensorflow
+plotly
+sqlalchemy
+psycopg2-binary
+streamlit-autorefresh
+authlib
+
+
+# =================================
+# Pushing code into GitHub step
+# =================================
+1. git init
+2. git add .
+3. git commit -m "Initial commit"
+
+# ===================================
+Push Code
+# ===================================
+4. git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+5. git branch -M main
+6. git push -u origin main
+
+# ========================
+Create Step Repo:
+🔧 Steps:
+
+Click “Deploy an app”
+
+Connect your GitHub
+
+Select:
+
+Repository: your-repo-name
+Branch: main
+File: app.py
+
+Click Deploy
