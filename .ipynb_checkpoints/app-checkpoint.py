@@ -77,8 +77,8 @@ st.set_page_config(page_title="Construction Dashboard", layout="wide")
 # =========================
 # LOAD MODEL + SCALER
 # =========================
-model = load_model("lstm_model.h5", compile=False)
-scaler = joblib.load("scaler.pkl")
+model = load_model("lstm_model2.h5", compile=False)
+scaler = joblib.load("scaler2.pkl")
 
 # =========================
 # TITLE
@@ -89,7 +89,7 @@ st.markdown("---")
 # =========================
 # LOAD DATA
 # =========================
-df = pd.read_csv("merged_df.csv")
+df = pd.read_csv("merged_df2.csv")
 
 df['TIMESTAMP'] = pd.to_datetime(df['TIMESTAMP'])
 df = df.sort_values('TIMESTAMP')
@@ -291,17 +291,28 @@ else:
 # =========================
 # ALERT FUNCTION
 # =========================
+import smtplib
+
 def send_alert():
-    sender = "your_email@gmail.com"
-    receiver = "receiver@gmail.com"
-    password = "your_app_password"
+    sender = "techops@florosense.com"
+    receiver = "ops1@florosense.com"
+    password = "nttn vqlk hjcw ewlx"  # must be App Password
 
-    message = "Subject: Construction Alert\n\nStop work tomorrow due to high pollution."
+    subject = "Construction Alert"
+    body = "Stop work tomorrow due to high pollution."
 
-    with smtplib.SMTP("smtp.gmail.com", 587) as server:
-        server.starttls()
-        server.login(sender, password)
-        server.sendmail(sender, receiver, message)
+    message = f"Subject: {subject}\n\n{body}"
+
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587) as server:
+            server.starttls()
+            server.login(sender, password)
+            server.sendmail(sender, receiver, message)
+
+        print("Email sent successfully ✅")
+
+    except Exception as e:
+        print("Error occurred ❌:", e)
 
 # =========================
 # TRIGGER ALERT
