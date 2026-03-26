@@ -77,8 +77,8 @@ st.set_page_config(page_title="Construction Dashboard", layout="wide")
 # =========================
 # LOAD MODEL + SCALER
 # =========================
-model = load_model("lstm_model2.h5", compile=False)
-scaler = joblib.load("scaler2.pkl")
+model = load_model("lstm_model3.h5", compile=False)
+scaler = joblib.load("scaler3.pkl")
 
 # =========================
 # TITLE
@@ -89,7 +89,7 @@ st.markdown("---")
 # =========================
 # LOAD DATA
 # =========================
-df = pd.read_csv("merged_df2.csv")
+df = pd.read_csv("merged_df3.csv")
 
 df['TIMESTAMP'] = pd.to_datetime(df['TIMESTAMP'])
 df = df.sort_values('TIMESTAMP')
@@ -100,7 +100,7 @@ df.set_index('TIMESTAMP', inplace=True)
 # =========================
 features = [
     'PM2.5', 'PM10', 'TEMPERATURE', 'HUMIDITY',
-    'WS', 'WD', 'RF', 'NO2', 'Ozone'
+    'WS', 'WD', 'RF', 'Ozone'
 ]
 
 data = df[features]
