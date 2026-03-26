@@ -83,7 +83,7 @@ scaler = joblib.load("scaler3.pkl")
 # =========================
 # TITLE
 # =========================
-st.markdown("## 🏗️ Construction Safety Dashboard")
+st.markdown("## 🏗️ Construction Safety Dashboard - LSTM Model")
 st.markdown("---")
 
 # =========================
@@ -189,6 +189,26 @@ time_labels = [
     (start_time + timedelta(hours=i)).strftime("%d-%b %H:%M")
     for i in range(24)
 ]
+
+# =========================
+# SIDEBAR
+# =========================
+with st.sidebar:
+    st.title("⚙️ Controls")
+    
+    if st.button("🚪 Logout"):
+        st.session_state.logged_in = False
+        st.rerun()
+
+    auto_refresh = st.checkbox("🔄 Auto Refresh (1 hour)")
+
+# =========================
+# AUTO REFRESH
+# =========================
+if auto_refresh:
+    import time
+    time.sleep(3600)
+    st.rerun()
 
 # =========================
 # DATAFRAME FOR GRAPH
