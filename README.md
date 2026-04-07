@@ -47,3 +47,24 @@
   2. Analyse sensor readings—flag those that are significantly higher than the group average or threshold.
   3. Investigate possible local causes (e.g., traffic, construction, wind patterns) for high readings.
   4. Visualise results on a map for easy identification.
+
+
+ Data Flow:
+ Problem Statement:
+Data: One weather station (CPCB Mulund West) → provides weather + pollutant data (NO₂, O₃, CO, RH, WS, WD, SR, RF, AT).
+Multiple on-site sensors → provide PM2.5, PM10, temp, humidity at the construction site.
+Merged dataset aligned by timestamp.
+
+
+Goals:
+•	Predict the next 7 days whether the construction site can continue work (binary classification: yes/no).
+•	Explain the cause of change from previous days to the next date (feature importance/ contribution over time).
+•	Identify which construction site sensor contributes most to pollution at that location.
+•	Compare LSTM vs XGBoost, choose the more confident model.
+
+ 
+ 
+
+
+<img width="940" height="1135" alt="image" src="https://github.com/user-attachments/assets/a5f21771-efbf-4bfc-bbd6-ddfcc8e1833b" />
+
