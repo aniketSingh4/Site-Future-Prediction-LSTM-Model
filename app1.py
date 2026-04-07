@@ -240,6 +240,19 @@ if not safe_hours.empty:
 else:
     st.warning("❌ No safe hours tomorrow")
 
+# =========================
+# RISK TABLE
+# =========================
+st.markdown("### ⚠️ Risk Analysis")
+st.dataframe(plot_df, use_container_width=True)
+
+#risky_hours = plot_df[plot_df["Confidence"] < 50]
+
+#if not risky_hours.empty:
+#st.warning(f"⚠️ {len(risky_hours)} risky hours detected tomorrow")
+#else:
+    #st.success("✅ No risky hours detected")
+
 
 # =========================
 # SIDEBAR

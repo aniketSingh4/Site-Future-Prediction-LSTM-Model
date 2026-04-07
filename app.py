@@ -301,7 +301,7 @@ st.line_chart(plot_df.set_index("Time")[["Confidence"]])
 st.markdown("### ⚠️ Risk Analysis")
 st.dataframe(plot_df, use_container_width=True)
 
-risky_hours = plot_df[plot_df["Confidence"] < 30]
+risky_hours = plot_df[plot_df["Confidence"] < 50]
 
 if not risky_hours.empty:
     st.warning(f"⚠️ {len(risky_hours)} risky hours detected tomorrow")
