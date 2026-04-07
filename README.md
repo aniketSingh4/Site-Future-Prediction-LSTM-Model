@@ -49,7 +49,7 @@
   4. Visualise results on a map for easy identification.
 
 
- Data Flow:
+
  Problem Statement:
 Data: One weather station (CPCB Mulund West) → provides weather + pollutant data (NO₂, O₃, CO, RH, WS, WD, SR, RF, AT).
 Multiple on-site sensors → provide PM2.5, PM10, temp, humidity at the construction site.
